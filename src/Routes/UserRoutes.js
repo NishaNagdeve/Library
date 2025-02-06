@@ -8,7 +8,7 @@ const app=express();
 const cors=require('cors') ;
 
 app.use(cors({
-    origin: "https://library-2pa0.onrender.com",
+    origin: "https://library-1-a4gx.onrender.com",
     methods: "GET,POST,PUT,DELETE",
     allowedHeaders: "Content-Type,Authorization"
 }));
