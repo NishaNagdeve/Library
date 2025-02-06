@@ -22,6 +22,9 @@ export default function Home(){
    const[due,setDue]=useState('');
    const[tree,setTree]=useState('');
    const[schema,setSchema]=useState(false);
+    
+   const api="https://library-2pa0.onrender.com";
+
    const handleModal=()=>
    {
        setModal(true);
@@ -98,7 +101,7 @@ export default function Home(){
         try
        {
           console.log(pdf);
-          const res=await axios.post('http://localhost:3000/bookadd',formData, {
+          const res=await axios.post(`${api}/bookadd`,formData, {
             headers: {
                 'Content-Type': 'multipart/form-data', // Required for file uploads
             },
@@ -133,7 +136,7 @@ export default function Home(){
         setcanvas(true);
         try
         {
-         const res=await axios.get('http://localhost:3000/getBooks');
+         const res=await axios.get(`${api}/getBooks`);
          console.log(res.data);
          if(res.status===200){
          const books=res.data.map((book,index)=>({
@@ -161,7 +164,7 @@ export default function Home(){
        const data={name:memberName,std:std,addr:addr,id:value};
        console.log(data);
        try{
-      const resp=await axios.post('http://localhost:3000/savemember',data);
+      const resp=await axios.post(`${api}/savemember`,data);
       if(resp.status===200)
       {
          setModal(false);
@@ -177,9 +180,9 @@ export default function Home(){
     {
       //  const data={name:memberName,id:value};
       try{
-       const res=await axios.get('http://localhost:3000/getmember',{params:{id:value}});
+       const res=await axios.get(`${api}/getmember`,{params:{id:value}});
        console.log(res.data[0].bookCode);
-       const response=await axios.get('http://localhost:3000/bookname',{params:{code:res.data[0].bookCode}});
+       const response=await axios.get(`${api}/bookname`,{params:{code:res.data[0].bookCode}});
     
                 if(res.status===200 && response.status===200)
                 {
@@ -221,7 +224,7 @@ export default function Home(){
 
       const data={id:value,code:code,issue:isseudate,returndate:returndate};
       try{
-         const res=await axios.post('http://localhost:3000/bookissue',data);
+         const res=await axios.post(`${api}/bookissue`,data);
          setModal1(false);
 
       }
@@ -236,7 +239,7 @@ export default function Home(){
        const data={code:code,id:value};
        console.log(data);
         try{
-             const res=await axios.get('http://localhost:3000/bookissue',{params:data});
+             const res=await axios.get(`${api}/bookissue`,{params:data});
              setReturndate(res.data[0].returndate);
         }
         catch(error)
@@ -263,10 +266,10 @@ export default function Home(){
         
         const data={id:value,code:code,expectedReturndate:returndate,returndate:curdate,due:due};
         try{
-            const res=await axios.post('http://localhost:3000/returnbook',data);
+            const res=await axios.post(`${api}/returnbook`,data);
             if(res.status===200)
             {
-                const resp=await axios.delete('http://localhost:3000/bookissue',{params:{code:code}});
+                const resp=await axios.delete(`${api}/bookissue`,{params:{code:code}});
                 if(resp.status===200)
                 {
                   alert('Book return succefully');
@@ -282,7 +285,7 @@ export default function Home(){
     const checkBook=async(code)=>{
 
        try{
-             const res=await axios.get('http://localhost:3000/checkbook',{params:{code:code}});
+             const res=await axios.get(`${api}/checkbook`,{params:{code:code}});
              if(res.status===200)
              {
                 setAvalability(true);
@@ -302,8 +305,8 @@ export default function Home(){
 
        console.log(code);
         try{
-             const response=await axios.get('http://localhost:3000/getbook',{params:{code:code}});
-             const res=await axios.get('http://localhost:3000/checkbook',{params:{code:code}});
+             const response=await axios.get(`${api}/getbook`,{params:{code:code}});
+             const res=await axios.get(`${api}/checkbook`,{params:{code:code}});
              if (response.status === 200) {
                setBookname(response.data[0].name);
                setAuthor(response.data[0].author);
@@ -325,7 +328,7 @@ export default function Home(){
     const deleteBook=async()=>{
            
          try{
-             const res=await axios.delete('http://localhost:3000/deletebook',{params:{code:code}});
+             const res=await axios.delete(`${api}/deletebook`,{params:{code:code}});
              if(res.status===200)
              {
                 setModal1(false);

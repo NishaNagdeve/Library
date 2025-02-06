@@ -11,7 +11,8 @@ export default function Login() {
    const[name,setName]=useState('');
    const[id,setId]=useState('');
    const [flag,setFlag]=useState(0);
-
+    
+   const api="https://library-2pa0.onrender.com";
   const handleInput=(e)=>
     {
         const{name,value}=e.target;
@@ -37,7 +38,7 @@ export default function Login() {
         {
           console.log("hello");
           console.log(loginData);
-          const res=await axios.post('http://localhost:3000/login',loginData);
+          const res=await axios.post(`${api}/login`,loginData);
           navigate('/home');
           console.log("bye");
         if (res.status===200) {

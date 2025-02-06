@@ -4,8 +4,14 @@ const bodyparser=require('body-parser');
 const fileUpload = require('express-fileupload');
 const path = require('path');
 const fs = require('fs');
-const app=express();   
+const app=express();  
+const cors=require('cors') ;
 
+app.use(cors({
+    origin: "https://library-2pa0.onrender.com",
+    methods: "GET,POST,PUT,DELETE",
+    allowedHeaders: "Content-Type,Authorization"
+}));
 app.use(fileUpload());
 app.use(bodyparser.json());
 // const DB="mongodb://localhost:27017/Library";
