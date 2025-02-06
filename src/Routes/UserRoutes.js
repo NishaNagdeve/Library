@@ -9,7 +9,7 @@ const app=express();
 app.use(fileUpload());
 app.use(bodyparser.json());
 // const DB="mongodb://localhost:27017/Library";
-const DB="mongodb+srv://nagdevenisha:ioLci5ACp1vtU6XF@cluster0.pjsbc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const DB="mongodb+srv://nagdevenisha:ioLci5ACp1vtU6XF@cluster0.pjsbc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0?ssl=false";
 mongoose.connect(DB,{
     useNewUrlParser:true,
 }).then(()=>console.log('DB connected'));
