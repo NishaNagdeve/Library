@@ -1,0 +1,106 @@
+.lib
+{
+    height: 500px;
+    width: 1200px;
+    border-radius: 5%;
+    margin-top:50px;
+    margin-bottom: 50px;
+   
+   
+}
+.input
+{
+    height: 300px;
+    width:400px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 25px;
+    margin-top: -450px;
+    position: relative;
+    align-items: center;
+    margin-left: 470px;
+   
+}
+.book
+{
+    margin-top: 10px;
+    height: 70px;
+    width: 100px;
+    margin-left: -250px;
+}
+.text
+{
+    color: orangered;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: -30px;
+}
+.input
+{
+    color: orange;
+}
+.btn
+{
+    background-color:  orangered;
+    width: 100px;
+    border-radius: 5px;
+}
+.main
+{
+    height: 600px;
+    background-color:#8d6e63;
+}
+@media(max-width:480px)
+{
+    .main
+{
+    height: 600px;
+    background-color:#ffebee;
+}
+    .lib
+{
+    height: 500px;
+    width: 300px;
+    border-radius: 5%;
+    margin-top:50px;
+    margin-bottom: 50px;
+   
+}
+.input
+{
+    height: 300px;
+    width:200px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 25px;
+    margin-top: -450px;
+    position: relative;
+    align-items: center;
+    margin-left: 60px;
+   
+}
+.book
+{
+    margin-top: 10px;
+    height: 40px;
+    width: 50px;
+    margin-left: -140px;
+}
+.text
+{
+    color: orangered;
+    font-size: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: -10px;
+}
+.input
+{
+    color: orange;
+}
+.btn
+{
+    background-color:  orangered;
+    width: 100px;
+    border-radius: 5px;
+}
+}

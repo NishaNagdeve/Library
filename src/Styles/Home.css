@@ -1,0 +1,489 @@
+
+.textlib
+{
+    color: #f57c00;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 20px;
+    /* margin-left: -600px; */
+}
+.bookimg
+{
+    height: 120px;
+    width: 170px;
+    /* margin-left: -1200px; */
+}
+.maint
+{
+    background-color: #8d6e63;
+}
+.divd
+{
+    background-color: #f57c00;
+    word-spacing: 40px;
+    /* font-weight: bold; */
+    color: white;
+    margin-left: -900px;
+    font-size: 20px;
+    /* cursor: grab; */
+    gap: 20px;
+}
+.home:hover{
+    color: black;
+    cursor: pointer;
+}
+.member:hover{
+    color: black;
+    cursor: pointer;
+}
+.transact::selection{
+    /* color: black; */
+    border-color: #f57c00;
+}
+.transact:hover{
+    cursor: pointer;
+}
+.divt
+{
+    /* margin-top: 430px; */
+    background-color: #f57c00;
+    /* word-spacing: 40px; */
+    color: white;
+    /* margin-left: -900px; */
+    font-size: 15px;
+}
+.label1
+{
+    margin-left: -50;
+}
+.label2
+{
+    position: relative;
+    margin-left: 850px;
+}
+.libray
+{
+    height: 400px;
+    width: 1300px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 25px;
+}
+.icon
+{
+   margin-left: 700px;
+   margin-top: 40px; 
+   font-size: 40px !important;
+   color: #f57c00;
+   cursor: pointer;
+  
+}
+.admin
+{
+    margin-top: 80px;
+    margin-left: -45px;
+    letter-spacing: 1px;
+    color: #f57c00;
+}
+.books
+{
+   
+    margin-top: 40px;
+    margin-left: 120px;
+    border: 2px solid black;
+    width: 400px;
+}
+.books p{
+    font-weight: bold;
+}
+.books input:hover{
+    border-color: black;
+}
+.books input{
+    margin-left: 10px;
+}
+
+ .upload{
+    height: 300px;
+    width: 1285px;
+    border: 2px dashed grey;
+    margin-bottom: 20px;
+    margin-left: 30px;
+ }
+ .uploadbook{
+    margin-top: -300px;
+    margin-left: 500px;
+ }
+.cloud
+{
+     font-size: 40px !important;
+     color: blue;
+     margin-top: 130px;
+     cursor: pointer;
+}
+.dos
+{
+    font-weight: bold;
+    font-size: 25px;
+}
+.donts
+{
+    font-weight: bold;
+    font-size: 25px;
+}
+.rules p:nth-child(1)
+{
+   font-weight: bold;
+   font-size: 25px;
+}
+.rules p:nth-child(2)
+{
+    font-size: 20px;
+}
+.card
+{
+    width: 100%;
+    height: -500px;
+}
+.quote
+{
+    height: 200px;
+    width: 100%;
+    background-color:burlywood;
+    margin-bottom: 40px;
+    align-content: center;
+}
+.true,.false
+{
+    font-size: 20px;
+}
+.name{
+    margin-left: 30px;
+}
+.id{
+    margin-left: 5px;
+}
+.newmember{
+    border-radius: 15px;
+    background-color: #8d6e63;
+}
+.namec,.libId
+{
+    margin-left: 30px;
+}
+.std
+{
+    margin-left: 47px;
+}
+.addr
+{
+    margin-left: 51px;
+}
+.code
+{
+    margin-left: 24px;
+}
+.date1
+{
+    margin-left: 12px;
+}
+.date2
+{
+    margin-left: 16px;
+}
+.view
+{
+   position: absolute;
+   margin-left: 850px;
+   font-size: 30px !important;
+   cursor: pointer;
+}
+.bookimage{
+    height:30px;
+    width:40px;
+    border-radius:15px;
+}
+.divm label{ font-weight: bold;}
+.text1{ margin-left: 90px;}
+.text2{margin-left: 82px;}
+.text4{margin-left: 22px;}
+.text5{margin-left: 135px;}
+.schema{
+    font-weight:bold;
+    font-size: 15px;
+}
+@media(max-width:480px)
+
+{
+        .body{
+           
+            overflow-y: hidden;
+            overflow-x: hidden;
+        }
+    .textlib
+{
+    color: #f57c00;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 10px;
+    margin-top: 20px;
+    /* margin-left: -600px; */
+    margin-left: -5px;
+}
+.bookimg
+{
+    height: 70px;
+    width: 80px;
+    max-width: 100%;
+    margin-left: -5px;
+    
+    /* margin-left: -1200px; */
+}
+.maint
+{
+    background-color: #8d6e63;
+}
+.divd
+{
+    background-color: #f57c00;
+    word-spacing: 40px;
+    /* font-weight: bold; */
+    color: white;
+    margin-left: -100px;
+    font-size: 10px;
+    cursor: pointer;
+}
+.home:hover{
+    color: black;
+}
+.member:hover{
+    color: black;
+}
+.transact:hover{
+    color: black;
+}
+.divt
+{
+    /* margin-top: 430px; */
+    background-color: #f57c00;
+    /* word-spacing: 40px; */
+    color: white;
+    /* margin-left: -900px; */
+    font-size: 15px;
+    height: 40px;
+    margin-bottom: 0%;
+}
+.label1
+{
+    margin-left: -50;
+}
+.label2
+{
+    position: relative;
+    margin-left: 850px;
+}
+.libray
+{
+    height: 200px;
+    width: 300px;
+    max-width: 100%;
+    margin: 7px 7px;
+    border-radius: 25px;
+}
+.icon
+{
+   margin-left: 80px;
+   margin-top: 20px; 
+   font-size: 20px !important;
+   color: #f57c00;
+  
+}
+.admin
+{
+    margin-top: 37px;
+    margin-left: -27px;
+    letter-spacing: 1px;
+    font-size: 8px;
+}
+.books
+{
+   
+    margin-top: 20px;
+    /* margin-left: 120px; */
+    border: 1px solid black;
+    width: 150px;
+    margin-left: 20px;
+}
+.books p{
+    font-weight: bold;
+}
+.books input:hover{
+    border-color: black;
+}
+.books input{
+    /* margin-left: 10px; */
+    font-size: 8px;
+}
+.upload{
+    height: 300px;
+    width: 300px;
+    border: 2px dashed grey;
+    margin-bottom: 20px;
+    margin-left: 9px;
+ }
+ .uploadbook{
+    margin-top: -320px;
+    margin-left: 160px;
+ }
+ .uploadbook p{
+    font-size: 10px;
+ }
+ .uploadbook button{
+     height: 30px;
+     width: 80px;
+     font-size: 10px;
+ }
+.cloud
+{
+     font-size: 35px !important;
+     color: blue;
+     margin-top: 130px;
+     cursor: pointer;
+}
+.rules p:nth-child(1)
+{
+   font-weight: bold;
+   font-size: 18px;
+}
+.rules p:nth-child(2)
+{
+    font-size: 13px;
+}
+.dos,.donts
+{
+    font-size: 18px;
+}
+.true
+{
+    font-size: 14px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+.false
+{
+    font-size: 14px;
+    margin-left: 10px;
+}
+.quote
+{
+    height: 100px;
+    width: 100%;
+    background-color:burlywood;
+    margin-bottom: 10px;
+    align-content: center;
+}
+.quote h2
+{
+    font-size: 15px;
+}
+.quote h4
+{
+     font-size: 10px;
+}
+.name
+{
+  position: relative;
+  margin-left: 0px;
+}
+.view{
+
+    /* position: absolute; */
+   /* margin-left: 850px; */
+   margin-left: 70px;
+   font-size: 20px !important;
+   cursor: pointer;
+}
+.modal-custom .modal-dialog {
+    max-width: 70%; /* Adjust width as needed */
+    margin: auto;   /* Center the modal */
+  }
+.modal-custom input
+{
+    width:'30px';
+    font-size: 10px;
+}
+.textt
+{
+    font-size: 12px;
+}
+.libId
+{
+    margin-left: 30px;
+}
+.namec{
+    width: 150px;
+    margin-left: 0px;
+}
+.std,.namec,.addr,.idr
+{
+    width: 140px;
+}
+.std,.namec,.addr,.idr:hover
+{
+    color: black !important;
+    cursor: pointer;
+}
+.std{
+    margin-left: 45px;
+}
+.divm label{ font-weight: bold;}
+.namec{ margin-left: 25px;}
+.code
+{
+    margin-left: 24px;
+}
+.date1
+{
+    margin-left: 12px;
+}
+.date2
+{
+    margin-left: 16px;
+}
+.canvas
+{
+    max-width: 70% !important;
+    font-size: 15px;
+
+}
+.bookimage{
+    height:20px;
+    width:25px;
+    border-radius:10px;
+}
+.rowname,.rowcode
+{
+    font-size: 10px;
+}
+.text1{ margin-left: 70px;}
+.text2{margin-left: 65px;}
+.text4{margin-left: 16px;}
+.text5{margin-left: 100px;}
+.schema{
+    font-weight:bold;
+    font-size: 10px;
+}
+.schema1
+{
+     font-size: 10px;
+}
+.tree{
+     font-size: 12px;
+     text-transform: lowercase;
+}
+.tree1
+{
+    font-size: 12px;
+}
+} 
