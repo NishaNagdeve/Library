@@ -227,6 +227,7 @@ app.get('/getmember',async(req,res)=>{
             if(data.length===0)
             {
                 const data=await issueBooks.find({libraryId:id}).select('bookCode returndate -_id');
+                res.status(200).json(data);
             }
             res.status(200).json(data);
      } 
