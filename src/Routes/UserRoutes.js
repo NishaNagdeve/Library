@@ -132,7 +132,7 @@ app.post('/savemember',async(req,res)=>{
 })
 const issuebookschema=new mongoose.Schema({
      libraryId:String,
-     bookcode:String,
+     bookCode:String,
      issuedate:String,
      returndate:String
 })
@@ -141,7 +141,7 @@ app.post('/bookissue',async(req,res)=>{
 
     const{id,code,issue,returndate}=req.body;
     try{
-          const books=new issueBooks({libraryId:id,bookcode:code,issuedate:issue,returndate:returndate});
+          const books=new issueBooks({libraryId:id,bookCode:code,issuedate:issue,returndate:returndate});
           await books.save();
           res.status(200).send({message:'BOOK Isssued'});
     }
@@ -156,7 +156,7 @@ app.get('/bookissue',async(req,res)=>{
       const{code,id}=req.query;
       console.log(req.query);
       try{
-                 const result= await issueBooks.find({libraryId:id,bookcode:code}).select('returndate -_id').lean();
+                 const result= await issueBooks.find({libraryId:id,bookCode:code}).select('returndate -_id').lean();
                  console.log(result);
                  res.status(200).json(result.map(item=>({returndate:item.returndate})));
         }
@@ -170,7 +170,7 @@ app.get('/checkbook',async(req,res)=>{
      console.log(code);
      try
      {
-           const result=await issueBooks.find({bookcode:String(code)});
+           const result=await issueBooks.find({bookCode:String(code)});
            console.log(result.length);
            if (result.length === 0) {
             res.status(200).json(result.length);//0
@@ -226,7 +226,7 @@ app.get('/getmember',async(req,res)=>{
             const data=await returnbook.find({libraryId:id}).select('bookCode expectedReturnDate actualReturnDate due -_id');
             if(data.length===0)
             {
-                const data=await issueBooks.find({libraryId:id}).select('bookcode returndate -_id');
+                const data=await issueBooks.find({libraryId:id}).select('bookCode returndate -_id');
                 res.status(200).json(data);
             }
             res.status(200).json(data);
@@ -255,7 +255,7 @@ app.delete('/bookissue',async(req,res)=>{
 
       const {code}=req.query;
      try{
-             await issueBooks.deleteOne({bookcode:String(code)});
+             await issueBooks.deleteOne({bookCode:String(code)});
              res.status(200).send({message:'deleted from issue books'});
      }
      catch(err)
