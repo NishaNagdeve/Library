@@ -183,7 +183,14 @@ export default function Home(){
       try{
        const res=await axios.get(`${api}/getmember`,{params:{id:value}});
        console.log(res.data);
-       const response=await axios.get(`${api}/bookname`,{params:{code:res.data[0].bookCode}});
+       if(res.data.length===0)
+       {
+            setFlag(false);
+            setSchema(true);
+            setModal(false);
+       }
+       else{
+         const response=await axios.get(`${api}/bookname`,{params:{code:res.data[0].bookCode}});
     
                 if(res.status===200 && response.status===200)
                 {
@@ -194,17 +201,16 @@ export default function Home(){
                     setModal(false);
                     setSchema(true);
                 }
-                else if(res.status===400)
-                {
-                      setFlag(false);
-                }
                 else
                 {
-                  alert('Library Id not found!!!');
+                  alert("LIBRARY ID NOT FOUND!!!!")
+                  setFlag(false);
                 }
+               }
       }
       catch(err){
             console.log(err);
+            setFlag(false);
       }
 
        
@@ -560,9 +566,9 @@ export default function Home(){
         <Modal.Body>
                <label>NAME: {memberName}</label><br></br>
                <label>LIBRARAY ID: {value}</label>
-                <p style={{fontWeight:'bold',textAlign:'center',color:'#f57c00'}}>BOOK TRANSACTION</p>
-                {flag ?
+               {flag ?(
                 <>
+                <p style={{fontWeight:'bold',textAlign:'center',color:'#f57c00'}}>BOOK TRANSACTION</p>
                 <Row className='schema'>
                   <Col>NAME</Col>
                   <Col>EXPECTED RETURN DATE</Col>
@@ -576,7 +582,7 @@ export default function Home(){
                   <Col>{due}.00</Col>
                  </Row>
                  </>
-                 :<h4>NO BOOK RECORD</h4>}
+                 ):(<h4>NO BOOK RECORD</h4>)}
         </Modal.Body>
       </Modal> 
          </div>
