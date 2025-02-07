@@ -224,6 +224,10 @@ app.get('/getmember',async(req,res)=>{
      const{id}=req.query;
      try{
             const data=await returnbook.find({libraryId:id}).select('bookCode expectedReturnDate actualReturnDate due -_id');
+            if(data.length===0)
+            {
+                const data=await issueBooks.find({libraryId:id}).select('bookCode returndate -_id');
+            }
             res.status(200).json(data);
      } 
      catch(err)

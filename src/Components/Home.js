@@ -186,9 +186,9 @@ export default function Home(){
     
                 if(res.status===200 && response.status===200)
                 {
-                    setCurdate(res.data[0].actualReturnDate);
-                    setReturndate(res.data[0].expectedReturnDate);
-                    setDue(res.data[0].due);
+                    setCurdate(res.data[0].actualReturnDate || "yet to return");
+                    setReturndate(res.data[0].expectedReturnDate || res.data[0].returndate);
+                    setDue(res.data[0].due || "Nill");
                     setBookname(response.data[0].name);
                     setModal(false);
                     setSchema(true);
