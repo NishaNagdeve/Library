@@ -176,22 +176,27 @@ export default function Home(){
          console.error(error);
       }
     }
+    const [flag,setFlag]=useState(true);
     const searchMember=async()=>
     {
       //  const data={name:memberName,id:value};
       try{
        const res=await axios.get(`${api}/getmember`,{params:{id:value}});
-       console.log(res.data[0].bookCode);
+       console.log(res.data);
        const response=await axios.get(`${api}/bookname`,{params:{code:res.data[0].bookCode}});
     
                 if(res.status===200 && response.status===200)
                 {
                     setCurdate(res.data[0].actualReturnDate || "yet to return");
                     setReturndate(res.data[0].expectedReturnDate || res.data[0].returndate);
-                    setDue(res.data[0].due || "Nill");
+                    setDue(res.data[0].due);
                     setBookname(response.data[0].name);
                     setModal(false);
                     setSchema(true);
+                }
+                else if(res.status===400)
+                {
+                      setFlag(false);
                 }
                 else
                 {
@@ -556,7 +561,9 @@ export default function Home(){
                <label>NAME: {memberName}</label><br></br>
                <label>LIBRARAY ID: {value}</label>
                 <p style={{fontWeight:'bold',textAlign:'center',color:'#f57c00'}}>BOOK TRANSACTION</p>
-                 <Row className='schema'>
+                {flag ?
+                <>
+                <Row className='schema'>
                   <Col>NAME</Col>
                   <Col>EXPECTED RETURN DATE</Col>
                   <Col>DATE OF RETURN</Col>
@@ -568,6 +575,8 @@ export default function Home(){
                   <Col>{curdate}</Col>
                   <Col>{due}.00</Col>
                  </Row>
+                 </>
+                 :<h4>NO BOOK RECORD</h4>}
         </Modal.Body>
       </Modal> 
          </div>

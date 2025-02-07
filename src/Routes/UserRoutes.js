@@ -228,6 +228,10 @@ app.get('/getmember',async(req,res)=>{
             {
                 const data=await issueBooks.find({libraryId:id}).select('bookCode returndate -_id');
                 res.status(200).json(data);
+                if(data.length===0)
+                {
+                    res.status(400).send({message:'No book issue'});
+                }
             }
             res.status(200).json(data);
      } 
